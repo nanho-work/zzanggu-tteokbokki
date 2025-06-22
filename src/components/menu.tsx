@@ -3,6 +3,8 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 
+const prefix = process.env.NODE_ENV === 'production' ? '/zzanggu-tteokbokki' : '';
+
 interface MenuItem {
   title: string;
   description: string;
@@ -19,7 +21,7 @@ const menuItems: MenuItem[] = [
       { size: '중', amount: '12,000원' },
       { size: '대', amount: '14,000원' }
     ],
-    image: '/menu1.png'
+    image: `${prefix}/menu1.png`
   },
   {
     title: '차돌즉석떡볶이',
@@ -29,7 +31,7 @@ const menuItems: MenuItem[] = [
       { size: '중', amount: '15,000원' },
       { size: '대', amount: '17,000원' }
     ],
-    image: '/menu2.png'
+    image: `${prefix}/menu2.png`
   },
   {
     title: '짜장즉석떡볶이 (매콤)',
@@ -39,7 +41,7 @@ const menuItems: MenuItem[] = [
       { size: '중', amount: '13,000원' },
       { size: '대', amount: '15,000원' }
     ],
-    image: '/menu3.png'
+    image: `${prefix}/menu3.png`
   },
   {
     title: '비엔나즉석떡볶이',
@@ -49,7 +51,7 @@ const menuItems: MenuItem[] = [
       { size: '중', amount: '14,000원' },
       { size: '대', amount: '16,000원' }
     ],
-    image: '/menu4.png'
+    image: `${prefix}/menu4.png`
   },
   {
     title: '돈까스',
@@ -57,7 +59,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '8,000원' }
     ],
-    image: '/images/menu4.png'
+    image: `${prefix}/images/menu4.png`
   },
   {
     title: '쫄면',
@@ -65,7 +67,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '7,000원' }
     ],
-    image: '/images/menu14.jpg'
+    image: `${prefix}/images/menu14.jpg`
   },
   {
     title: '튀김 (2개)',
@@ -73,7 +75,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '1,500원' }
     ],
-    image: '/menu6.png'
+    image: `${prefix}/menu6.png`
   },
   {
     title: '쉬림프즉석떡볶이',
@@ -83,7 +85,7 @@ const menuItems: MenuItem[] = [
       { size: '중', amount: '15,000원' },
       { size: '대', amount: '17,000원' }
     ],
-    image: '/images/menu16.jpg'
+    image: `${prefix}/images/menu16.jpg`
   },
   {
     title: '라면사리',
@@ -91,7 +93,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu17.jpg'
+    image: `${prefix}/images/menu17.jpg`
   },
   {
     title: '쫄면사리',
@@ -99,7 +101,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu18.jpg'
+    image: `${prefix}/images/menu18.jpg`
   },
   {
     title: '떡사리',
@@ -107,7 +109,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu19.jpg'
+    image: `${prefix}/images/menu19.jpg`
   },
   {
     title: '치즈떡사리',
@@ -115,7 +117,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu20.jpg'
+    image: `${prefix}/images/menu20.jpg`
   },
   {
     title: '야채사리',
@@ -123,7 +125,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu21.jpg'
+    image: `${prefix}/images/menu21.jpg`
   },
   {
     title: '오뎅사리',
@@ -131,7 +133,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu22.jpg'
+    image: `${prefix}/images/menu22.jpg`
   },
   {
     title: '계란(간)',
@@ -139,7 +141,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '1,000원' }
     ],
-    image: '/images/menu23.jpg'
+    image: `${prefix}/images/menu23.jpg`
   },
   {
     title: '치즈사리',
@@ -147,7 +149,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu24.jpg'
+    image: `${prefix}/images/menu24.jpg`
   },
   {
     title: '햄사리',
@@ -155,7 +157,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu25.jpg'
+    image: `${prefix}/images/menu25.jpg`
   },
   {
     title: '차돌사리',
@@ -163,7 +165,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '5,000원' }
     ],
-    image: '/images/menu26.jpg'
+    image: `${prefix}/images/menu26.jpg`
   },
   {
     title: '아마이쯔케',
@@ -171,7 +173,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '1,500원' }
     ],
-    image: '/images/menu27.jpg'
+    image: `${prefix}/images/menu27.jpg`
   },
   {
     title: '김말이튀김',
@@ -179,7 +181,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '1,500원' }
     ],
-    image: '/menu6.png'
+    image: `${prefix}/menu6.png`
   },
   {
     title: '오징어튀김',
@@ -187,7 +189,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '1,500원' }
     ],
-    image: '/menu6.png'
+    image: `${prefix}/menu6.png`
   },
   {
     title: '기본볶음밥',
@@ -195,7 +197,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu30.jpg'
+    image: `${prefix}/images/menu30.jpg`
   },
   {
     title: '치즈볶음밥',
@@ -203,7 +205,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '4,000원' }
     ],
-    image: '/images/menu31.jpg'
+    image: `${prefix}/images/menu31.jpg`
   },
   {
     title: '물냉면',
@@ -211,7 +213,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '7,000원' }
     ],
-    image: '/images/menu32.jpg'
+    image: `${prefix}/images/menu32.jpg`
   },
   {
     title: '비빔냉면',
@@ -219,7 +221,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '7,000원' }
     ],
-    image: '/images/menu33.jpg'
+    image: `${prefix}/images/menu33.jpg`
   },
   {
     title: '공기밥',
@@ -227,7 +229,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '1,500원' }
     ],
-    image: '/images/menu34.jpg'
+    image: `${prefix}/images/menu34.jpg`
   },
   {
     title: '콜라 (캔355ml)',
@@ -235,7 +237,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu35.jpg'
+    image: `${prefix}/images/menu35.jpg`
   },
   {
     title: '사이다 (캔355ml)',
@@ -243,7 +245,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu36.jpg'
+    image: `${prefix}/images/menu36.jpg`
   },
   {
     title: '쿨피스 (캔355ml)',
@@ -251,7 +253,7 @@ const menuItems: MenuItem[] = [
     prices: [
       { size: '', amount: '2,000원' }
     ],
-    image: '/images/menu37.jpg'
+    image: `${prefix}/images/menu37.jpg`
   }
 ];
 
@@ -374,7 +376,7 @@ export default function MenuList() {
       </div>
       <div className="relative flex items-center my-12">
         <div className="flex-grow border-t border-gray-300"></div>
-        <span className="mx-4 text-lg font-bold text-gray-500">사이드메뉴</span>
+        <span className="mx-4 text-lg font-bold text-gray-500">사이드 메뉴</span>
         <div className="flex-grow border-t border-gray-300"></div>
       </div>
       <div id="사이드메뉴" ref={sideRef}>

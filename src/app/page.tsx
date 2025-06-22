@@ -1,4 +1,6 @@
 // src/app/page.tsx
+const prefix = process.env.NODE_ENV === 'production' ? '/zzanggu-tteokbokki' : '';
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-gray-800 max-w-5xl mx-auto">
@@ -6,7 +8,7 @@ export default function HomePage() {
 <section className="relative h-[500px] flex items-center justify-center text-white">
   {/* 배경 이미지 */}
   <img
-    src="/home2.png"
+    src={`${prefix}/home2.png`}
     alt="짱구즉석떡볶이"
     className="absolute inset-0 w-full h-full object-cover z-0"
   />
@@ -63,7 +65,7 @@ export default function HomePage() {
           ].map((menu, idx) => (
             <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="relative">
-                <img src={menu.image} alt={menu.title} className="w-full h-68 object-cover" />
+                <img src={`${prefix}${menu.image}`} alt={menu.title} className="w-full h-68 object-cover" />
                 <span className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">BEST</span>
               </div>
               <div className="p-4">
@@ -85,7 +87,7 @@ export default function HomePage() {
       <section className="px-4 py-12 text-gray-800 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* 이미지 왼쪽 */}
         <div>
-          <img src="/home.png" alt="떡볶이 안내" className="w-full rounded-lg shadow" />
+          <img src={`${prefix}/home.png`} alt="떡볶이 안내" className="w-full rounded-lg shadow" />
         </div>
 
         {/* 오른쪽 텍스트 */}
