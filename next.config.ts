@@ -9,3 +9,5 @@ const nextConfig = {
   basePath: isProd ? "/zzanggu-tteokbokki" : "",
   assetPrefix: isProd ? "/zzanggu-tteokbokki" : "",
 };
+
+export default nextConfig;
