@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="bg-white py-3 px-6 max-w-5xl mx-auto">
       <div className="mx-auto flex items-center justify-between">
-        <Link href={prefix + "/"}>
+        <Link href="/">
           <Image
             src={`${prefix}/logo.png`} // public 폴더에 저장한 PNG 파일
             alt="짱구즉석떡볶이 로고"
