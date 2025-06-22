@@ -21,8 +21,8 @@ export default function Header() {
         </Link>
         {/* 메뉴 추가할 수 있음 */}
         <nav className="text-black font-semibold space-x-4">
-          <Link href={`${prefix}/menu`} className="hover:underline">메뉴</Link>
-          <Link href={`${prefix}/locations`} className="hover:underline">지점 안내</Link>
+          <Link href={`/menu`} className="hover:underline">메뉴</Link>
+          <Link href={`/locations`} className="hover:underline">지점 안내</Link>
         </nav>
       </div>
     </header>
