@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="bg-white py-3 px-6 max-w-5xl mx-auto">
       <div className="mx-auto flex items-center justify-between">
-        <Link href="/">
+        <Link href={prefix + "/"}>
           <Image
             src={`${prefix}/logo.png`} // public 폴더에 저장한 PNG 파일
             alt="짱구즉석떡볶이 로고"
@@ -21,8 +21,8 @@ export default function Header() {
         </Link>
         {/* 메뉴 추가할 수 있음 */}
         <nav className="text-black font-semibold space-x-4">
-          <Link href={`/menu`} className="hover:underline">메뉴</Link>
-          <Link href={`/locations`} className="hover:underline">지점 안내</Link>
+          <Link href={`${prefix}/menu`} className="hover:underline">메뉴</Link>
+          <Link href={`${prefix}/locations`} className="hover:underline">지점 안내</Link>
         </nav>
       </div>
     </header>
